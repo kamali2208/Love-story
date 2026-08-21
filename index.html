@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Thraveen 💚</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#020805;
+  color:white;
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
+}
+#bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 50% 20%,rgba(32,245,154,.12),transparent 35%),
+    radial-gradient(circle at 20% 80%,rgba(8,169,104,.10),transparent 35%),
+    #020805;
+}
+.star{
+  position:fixed;
+  width:2px;height:2px;
+  border-radius:50%;
+  background:#8affc8;
+  box-shadow:0 0 8px #20f59a;
+  animation:twinkle 3s infinite alternate;
+}
+@keyframes twinkle{
+  from{opacity:.15}
+  to{opacity:.8;transform:scale(1.5)}
+}
+
+#login{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:#020805;
+}
+.loginbox{
+  width:min(360px,100%);
+  padding:28px 20px;
+  text-align:center;
+  border:1px solid rgba(32,245,154,.35);
+  border-radius:22px;
+  background:rgba(4,15,10,.95);
+  box-shadow:0 0 40px rgba(32,245,154,.12);
+}
+.loginbox h1{color:#8affc8;margin:15px 0 8px}
+.loginbox p{color:#789483;font:12px Arial;margin-bottom:20px}
+input{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid rgba(32,245,154,.25);
+  border-radius:12px;
+  outline:none;
+  background:#020d07;
+  color:white;
+}
+button{
+  border:1px solid rgba(32,245,154,.45);
+  border-radius:25px;
+  padding:11px 20px;
+  background:linear-gradient(90deg,#08a968,#20f59a);
+  color:#00150b;
+  font-weight:bold;
+  cursor:pointer;
+}
+.loginbtn{width:100%;margin-top:8px}
+#error{height:20px;color:#6cffb8;font:11px Arial;margin-top:8px}
+
+#app{display:none}
+.music{
+  position:fixed;
+  top:12px;
+  right:12px;
+  z-index:100;
+  width:42px;height:42px;
+  padding:0;
+  border-radius:50%;
+  background:#06150c;
+  color:#20f59a;
+}
+
+section{
+  min-height:100vh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:65px 15px 45px;
+}
+section.active{
+  display:flex;
+  animation:fade .5s ease;
+}
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+.content{
+  width:min(850px,100%);
+  text-align:center;
+}
+.kicker{
+  color:#20f59a;
+  font:10px Arial;
+  letter-spacing:3px;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+.title{
+  font-size:clamp(35px,8vw,62px);
+  line-height:1.05;
+}
+.green{color:#20f59a}
+.subtitle{
+  max-width:600px;
+  margin:15px auto 22px;
+  color:#91a99a;
+  font:12px Arial;
+  line-height:1.8;
+}
+.heart{
+  font-size:70px;
+  margin:15px;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{50%{transform:scale(1.12)}}
+
+.card{
+  width:min(700px,100%);
+  margin:22px auto;
+  padding:20px;
+  border:1px solid rgba(32,245,154,.25);
+  border-radius:20px;
+  background:rgba(5,20,13,.85);
+  box-shadow:0 0 30px rgba(32,245,154,.06);
+}
+
+.photos{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  width:min(700px,100%);
+  margin:22px auto;
+}
+.photo{
+  background:#edf7f0;
+  padding:6px 6px 28px;
+  cursor:pointer;
+  transform:rotate(-1deg);
+  box-shadow:0 10px 25px #000;
+}
+.photo:nth-child(2){transform:rotate(1deg)}
+.photo:nth-child(3){transform:rotate(1deg)}
+.photo:nth-child(4){transform:rotate(-1deg)}
+.photo img{
+  display:block;
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+}
+.caption{
+  color:#163d29;
+  font-size:11px;
+  margin-top:7px;
+}
+
+video{
+  width:100%;
+  max-height:500px;
+  border-radius:14px;
+  background:#000;
+}
+
+.letter{
+  text-align:left;
+}
+.letter p{
+  color:#b9cdbf;
+  font:13px Arial;
+  line-height:1.9;
+  margin-bottom:14px;
+}
+.sign{
+  color:#20f59a!important;
+}
+
+.chat{
+  width:min(400px,100%);
+  height:500px;
+  margin:20px auto;
+  border:1px solid rgba(32,245,154,.25);
+  border-radius:20px;
+  overflow:hidden;
+  background:#031009;
+  text-align:left;
+  font-family:Arial;
+}
+.chathead{
+  padding:16px;
+  background:#082015;
+  color:#8affc8;
+}
+.chatbody{
+  height:440px;
+  overflow:auto;
+  padding:12px;
+}
+.msg{
+  width:max-content;
+  max-width:80%;
+  padding:9px 12px;
+  margin:8px 0;
+  border-radius:10px;
+  font-size:11px;
+  line-height:1.5;
+}
+.mama{background:#0a2116}
+.ammu{
+  background:#08754a;
+  margin-left:auto;
+}
+
+.story{
+  min-height:300px;
+}
+.story h2{color:#8affc8;margin:15px 0}
+.story p{
+  color:#abc0b1;
+  font:13px Arial;
+  line-height:1.8;
+}
+.controls{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:15px;
+}
+
+.game{
+  width:min(600px,100%);
+  margin:auto;
+  padding:20px;
+  border:1px solid rgba(32,245,154,.25);
+  border-radius:20px;
+  background:rgba(5,20,13,.85);
+}
+.gamearea{
+  height:280px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(32,245,154,.2);
+  border-radius:14px;
+  background:#010704;
+  margin:15px 0;
+}
+.fall{
+  position:absolute;
+  top:-40px;
+  font-size:30px;
+  cursor:pointer;
+  animation:fall 3s linear forwards;
+}
+@keyframes fall{to{top:300px}}
+
+.memory{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  max-width:400px;
+  margin:20px auto;
+}
+.mem{
+  aspect-ratio:1;
+  border:1px solid rgba(32,245,154,.3);
+  border-radius:10px;
+  background:#06150c;
+  color:#20f59a;
+  font-size:22px;
+}
+.final{
+  color:#b9cdbf;
+  font:13px Arial;
+  line-height:1.9;
+  padding:22px;
+  border:1px solid rgba(32,245,154,.25);
+  border-radius:20px;
+  background:rgba(5,20,13,.85);
+}
+.cake{font-size:80px;margin:20px}
+
+.floating{
+  position:fixed;
+  bottom:-30px;
+  color:#20f59a;
+  z-index:50;
+  animation:float 7s linear forwards;
+  pointer-events:none;
+}
+@keyframes float{
+  to{transform:translateY(-110vh);opacity:0}
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,5,3,.96);
+  padding:15px;
+}
+.modal.show{display:flex}
+.modal img{
+  max-width:95vw;
+  max-height:88vh;
+  object-fit:contain;
+  border:1px solid #20f59a;
+  border-radius:12px;
+}
+.close{
+  position:absolute;
+  top:15px;
+  right:18px;
+  background:#06150c;
+  color:#20f59a;
+  width:40px;height:40px;
+  padding:0;
+}
+
+@media(max-width:600px){
+  .photos{gap:8px}
+  .card{padding:15px}
+  .letter p{font-size:12px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="bg"></div>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="loginbox">
+    <div style="font-size:50px">🔐</div>
+    <h1>Our Love Story 💚</h1>
+    <p>Only for Mama × Ammu</p>
+
+    <input id="username"
+           placeholder="Username — Thraveen"
+           autocomplete="off">
+
+    <input id="password"
+           type="password"
+           placeholder="Password">
+
+    <button class="loginbtn" onclick="unlock()">
+      Unlock Our Story 💚
+    </button>
+
+    <div id="error"></div>
+  </div>
+</div>
+
+<div id="app">
+
+<button class="music" onclick="toggleMusic()" id="musicBtn">♫</button>
+
+<!-- PAGE 1 -->
+<section id="p1" class="active">
+<div class="content">
+  <div class="kicker">A Secret Made For You</div>
+  <div class="heart">💚</div>
+
+  <h1 class="title">
+    Happy Birthday<br>
+    <span class="green">Thraveen</span>
+  </h1>
+
+  <p class="subtitle">
+    This little world contains our memories,
+    our conversations, our love and everything
+    I want to keep close to my heart.
+  </p>
+
+  <button onclick="next()">Enter Our Love Story 💚</button>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="p2">
+<div class="content">
+  <div class="kicker">Our Memories</div>
+
+  <h2 class="title">
+    Our Little<br>
+    <span class="green">Memories</span>
+  </h2>
+
+  <div class="photos">
+
+    <div class="photo" onclick="openPhoto('photo01.jpg')">
+      <img src="photo01.jpg" alt="Our Memory 1">
+      <div class="caption">Our Smile 💚</div>
+    </div>
+
+    <div class="photo" onclick="openPhoto('photo02.jpg')">
+      <img src="photo02.jpg" alt="Our Memory 2">
+      <div class="caption">Our Moment 💚</div>
+    </div>
+
+    <div class="photo" onclick="openPhoto('photo03.jpg')">
+      <img src="photo03.jpg" alt="Our Memory 3">
+      <div class="caption">Together 💚</div>
+    </div>
+
+    <div class="photo" onclick="openPhoto('photo04.jpg')">
+      <img src="photo04.jpg" alt="Our Memory 4">
+      <div class="caption">My Happy Place 💚</div>
+    </div>
+
+  </div>
+
+  <button onclick="next()">Continue 💚</button>
+</div>
+</section>
+
+<!-- PHOTO MODAL -->
+<div class="modal" id="modal" onclick="closePhoto()">
+  <button class="close"
+          onclick="event.stopPropagation();closePhoto()">×</button>
+  <img id="modalImg"
+       src=""
+       onclick="event.stopPropagation()">
+</div>
+
+<!-- PAGE 3 -->
+<section id="p3">
+<div class="content">
+
+  <div class="kicker">Our Little Movie</div>
+
+  <h2 class="title">
+    Our Memory<br>
+    <span class="green">Movie</span> 🎬
+  </h2>
+
+  <div class="card">
+    <video controls playsinline poster="photo04.jpg">
+      <source src="love-video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </div>
+
+  <button onclick="next()">Read My Letter 💌</button>
+
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section id="p4">
+<div class="content">
+
+  <div class="kicker">From Ammu</div>
+
+  <h2 class="title">
+    A Letter To<br>
+    <span class="green">My Mama</span>
+  </h2>
+
+  <div class="card letter">
+
+    <p>My dearest Mama,</p>
+
+    <p>
+      Sometimes I think about how a normal day can
+      quietly become the beginning of something that
+      changes our whole life.
+    </p>
+
+    <p>
+      Unkooda pesura every small conversation-um
+      enakku romba precious. Sometimes we laugh,
+      sometimes we fight, and sometimes oru word
+      kooda pesaama irundhaalum your presence itself
+      gives me comfort.
+    </p>
+
+    <p>
+      Naan perfect person illa mama. Enakku mistakes
+      irukkum. Aana one thing mattum true —
+      I genuinely care about you and I genuinely
+      want you in my future.
+    </p>
+
+    <p>
+      Un smile paatha enakku automatically happiness
+      varum. Un message varumbodhu even a normal day
+      becomes a little more special.
+    </p>
+
+    <p>
+      Namma relationship perfect-aa irukkanum nu naan
+      expect pannala. Good days or difficult days,
+      we should learn, understand and choose each
+      other again and again.
+    </p>
+
+    <p>
+      Mama, thank you for becoming someone I can
+      trust, someone I can talk to, someone I can miss
+      and someone I can love with my whole heart.
+    </p>
+
+    <p class="sign">
+      With all my heart,<br>
+      Ammu 💚
+    </p>
+
+  </div>
+
+  <button onclick="next()">Open Our Chat 💬</button>
+
+</div>
+</section>
+
+<!-- PAGE 5 -->
+<section id="p5">
+<div class="content">
+
+  <div class="kicker">Mama × Ammu</div>
+
+  <h2 class="title">
+    Our <span class="green">Chat</span> 💬
+  </h2>
+
+  <div class="chat">
+    <div class="chathead">
+      <b>Mama 💚</b><br>
+      <small>online</small>
+    </div>
+
+    <div class="chatbody" id="chatBody">
+      <div class="msg mama">Ammu... 🥹💚</div>
+      <div class="msg ammu">Sollunga mamaa 💚</div>
+      <div class="msg mama">Enna panra Ammu?</div>
+      <div class="msg ammu">
+        Ungala pathi dhaan yosichitu iruken mama 🥹
+      </div>
+      <div class="msg mama">
+        Namma story romba special.
+      </div>
+      <div class="msg ammu">
+        Always and forever Mamaaa 💚♾️
+      </div>
+    </div>
+  </div>
+
+  <button onclick="next()">Our Memories 🎞️</button>
+
+</div>
+</section>
+
+<!-- PAGE 6 -->
+<section id="p6">
+<div class="content">
+
+  <div class="kicker">Our Story</div>
+
+  <h2 class="title">
+    Little <span class="green">Chapters</span> 💚
+  </h2>
+
+  <div class="card story">
+    <div id="story"></div>
+
+    <div class="controls">
+      <button onclick="prevStory()">←</button>
+      <button onclick="nextStory()">→</button>
+    </div>
+  </div>
+
+  <button onclick="next()">Catch Our Hearts 💚</button>
+
+</div>
+</section>
+
+<!-- PAGE 7 -->
+<section id="p7">
+<div class="content">
+
+  <div class="kicker">Mini Game</div>
+
+  <h2 class="title">
+    Catch Our<br>
+    <span class="green">Hearts</span> 💚
+  </h2>
+
+  <div class="game">
+
+    <b>Hearts: <span id="score">0</span>/10</b>
+
+    <div class="gamearea" id="gameArea"></div>
+
+    <button onclick="startGame()">Start Game</button>
+
+    <p id="gameText"
+       style="color:#91a99a;font:12px Arial;margin-top:12px">
+       Ready mama? 💚
+    </p>
+
+  </div>
+
+  <button onclick="next()" style="margin-top:15px">
+    Memory Match 💞
+  </button>
+
+</div>
+</section>
+
+<!-- PAGE 8 -->
+<section id="p8">
+<div class="content">
+
+  <div class="kicker">Memory Game</div>
+
+  <h2 class="title">
+    Find Our <span class="green">Pairs</span>
+  </h2>
+
+  <div class="game">
+
+    <p style="font:12px Arial;color:#91a99a">
+      Pairs: <span id="pairs">0</span>/6
+    </p>
+
+    <div class="memory" id="memory"></div>
+
+    <button onclick="memoryGame()">Shuffle</button>
+
+  </div>
+
+  <button onclick="next()" style="margin-top:15px">
+    Final Wish 🎂
+  </button>
+
+</div>
+</section>
+
+<!-- PAGE 9 -->
+<section id="p9">
+<div class="content">
+
+  <div class="kicker">Only One Last Wish</div>
+
+  <h1 class="title">
+    Happy Birthday<br>
+    <span class="green">Thraveen</span> 🎂
+  </h1>
+
+  <div class="cake">🎂</div>
+
+  <div class="final">
+
+    <b style="color:#20f59a;font-size:18px">
+      Happy Birthday My Mamaaa 💚
+    </b>
+
+    <br><br>
+
+    Innaiku un birthday mama...
+    but enakku idhu just oru birthday illa.
+    Indha world-ku nee vandha special day.
+
+    <br><br>
+
+    Namma story-la irukkura every small moment-um
+    enakku precious. Un call, un message, un smile,
+    un voice — everything makes my day special.
+
+    <br><br>
+
+    Mama, un life-la nee aasapadura ellame unakku
+    kedaikkanum. Un dreams successful aaganum.
+    Unakku happiness, peace, success and beautiful
+    moments always irukkanum.
+
+    <br><br>
+
+    Namma future-la innum neraya birthdays,
+    neraya trips, neraya laughs, neraya photos,
+    neraya hugs and countless memories create
+    pannanum.
+
+    <br><br>
+
+    Nee enakku lover mattum illa mama.
+    Nee en comfort, en safe place,
+    en favourite person and en best friend.
+
+    <br><br>
+
+    Life full-ah un kooda travel pannanum.
+    Good days-laum difficult days-laum,
+    happy moments-laum silent moments-laum —
+    I want us to keep choosing each other.
+
+    <br><br>
+
+    <b style="color:#8affc8">
+      Happy Birthday once again, Thraveen. 🎂💚
+    </b>
+
+    <br><br>
+
+    <b style="color:#20f59a">
+      Forever yours,<br>
+      Ammu 💚♾️
+    </b>
+
+  </div>
+
+  <br>
+
+  <button onclick="celebrate()">
+    Make A Wish ✨
+  </button>
+
+</div>
+</section>
+
+<audio id="music" loop>
+  <source src="background.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* STARS */
+for(let i=0;i<60;i++){
+  const s=document.createElement("span");
+  s.className="star";
+  s.style.left=Math.random()*100+"%";
+  s.style.top=Math.random()*100+"%";
+  s.style.animationDelay=Math.random()*4+"s";
+  document.getElementById("bg").appendChild(s);
+}
+
+/* LOGIN */
+function unlock(){
+
+  const username=
+    document.getElementById("username")
+    .value.trim().toLowerCase();
+
+  const password=
+    document.getElementById("password")
+    .value.trim();
+
+  if(username==="thraveen" && password==="2208"){
+
+    document.getElementById("login").style.display="none";
+    document.getElementById("app").style.display="block";
+
+    document.getElementById("music")
+      .play()
+      .catch(()=>{});
+
+    hearts();
+
+  }else{
+
+    document.getElementById("error").textContent=
+      "Username or password wrong 💚";
+
+  }
+}
+
+document.getElementById("password")
+.addEventListener("keydown",function(e){
+  if(e.key==="Enter") unlock();
+});
+
+/* PAGE NAVIGATION */
+let page=1;
+const totalPages=9;
+
+function showPage(n){
+
+  page=Math.max(1,Math.min(totalPages,n));
+
+  for(let i=1;i<=totalPages;i++){
+
+    document.getElementById("p"+i)
+      .classList.toggle("active",i===page);
+
+  }
+
+  window.scrollTo(0,0);
+}
+
+function next(){
+  showPage(page+1);
+}
+
+/* MUSIC */
+function toggleMusic(){
+
+  const music=document.getElementById("music");
+  const btn=document.getElementById("musicBtn");
+
+  if(music.paused){
+    music.play().catch(()=>{});
+    btn.textContent="♫";
+  }else{
+    music.pause();
+    btn.textContent="🔇";
+  }
+}
+
+/* PHOTO */
+function openPhoto(src){
+
+  document.getElementById("modalImg").src=src;
+  document.getElementById("modal").classList.add("show");
+
+}
+
+function closePhoto(){
+
+  document.getElementById("modal")
+    .classList.remove("show");
+
+}
+
+/* FLOATING HEARTS */
+function hearts(){
+
+  setInterval(()=>{
+
+    const h=document.createElement("div");
+
+    h.className="floating";
+    h.textContent=["💚","♥","✨"][Math.floor(Math.random()*3)];
+
+    h.style.left=Math.random()*95+"%";
+    h.style.fontSize=(14+Math.random()*16)+"px";
+
+    document.body.appendChild(h);
+
+    setTimeout(()=>h.remove(),7000);
+
+  },2000);
+
+}
+
+/* STORY */
+const stories=[
+
+  ["01","🏫","First Meet",
+   "Andha first meet romba simple-aa irundhaalum, enakku adhu unforgettable memory. 💚"],
+
+  ["02","👀","First Feeling",
+   "Unna paatha first feeling-e konjam different-aa irundhuchu. 🥹"],
+
+  ["03","💬","First Conversation",
+   "Oru simple Hi-la start aana conversation slowly beautiful story-aa maariduchu."],
+
+  ["04","❤️","Love",
+   "Namma rendu perukkum special-aa irundha moments dhaan indha story oda beauty."],
+
+  ["05","🥹","Memories",
+   "Small calls, messages, laughs, fights — ellame enakku precious."],
+
+  ["06","💚","Together",
+   "Whatever happens, namma memories eppovume special."],
+
+  ["07","♾️","Forever",
+   "Future-la innum neraya memories create pannanum. Forever with my Mamaaa. 💚♾️"]
+
+];
+
+let storyIndex=0;
+
+function renderStory(){
+
+  const s=stories[storyIndex];
+
+  document.getElementById("story").innerHTML=`
+
+    <div style="color:#20f59a;font:10px Arial">
+      ${s[0]} / ${stories.length}
+    </div>
+
+    <div style="font-size:50px;margin:15px">
+      ${s[1]}
+    </div>
+
+    <h2>${s[2]}</h2>
+
+    <p>${s[3]}</p>
+
+  `;
+
+}
+
+function nextStory(){
+
+  storyIndex=(storyIndex+1)%stories.length;
+  renderStory();
+
+}
+
+function prevStory(){
+
+  storyIndex=
+    (storyIndex-1+stories.length)%stories.length;
+
+  renderStory();
+
+}
+
+renderStory();
+
+/* CATCH GAME */
+let score=0;
+let gameTimer;
+
+function startGame(){
+
+  clearInterval(gameTimer);
+
+  score=0;
+
+  document.getElementById("score").textContent="0";
+  document.getElementById("gameArea").innerHTML="";
+  document.getElementById("gameText").textContent=
+    "Catch them mama! 💚";
+
+  gameTimer=setInterval(()=>{
+
+    if(score>=10){
+      clearInterval(gameTimer);
+      return;
+    }
+
+    const h=document.createElement("span");
+
+    h.className="fall";
+    h.textContent="💚";
+
+    h.style.left=(Math.random()*90)+"%";
+
+    document.getElementById("gameArea")
+      .appendChild(h);
+
+    h.onclick=()=>{
+
+      score++;
+
+      document.getElementById("score")
+        .textContent=score;
+
+      h.remove();
+
+      if(score>=10){
+
+        clearInterval(gameTimer);
+
+        document.getElementById("gameText")
+          .textContent=
+          "10 hearts caught! Love wins 💚✨";
+
+        smallCelebrate();
+
+      }
+
+    };
+
+    setTimeout(()=>h.remove(),3000);
+
+  },600);
+
+}
+
+/* MEMORY GAME */
+const memoryValues=
+  ["💚","🌿","💍","🎂","♾️","🌹"];
+
+let firstCard=null;
+let lock=false;
+let pairCount=0;
+
+function memoryGame(){
+
+  const values=[
+    ...memoryValues,
+    ...memoryValues
+  ].sort(()=>Math.random()-.5);
+
+  const box=document.getElementById("memory");
+
+  box.innerHTML="";
+  firstCard=null;
+  lock=false;
+  pairCount=0;
+
+  document.getElementById("pairs").textContent="0";
+
+  values.forEach(value=>{
+
+    const b=document.createElement("button");
+
+    b.className="mem";
+    b.textContent="♥";
+    b.dataset.value=value;
+
+    b.onclick=()=>{
+
+      if(lock || b.dataset.open==="yes")
+        return;
+
+      b.dataset.open="yes";
+      b.textContent=value;
+
+      if(!firstCard){
+
+        firstCard=b;
+        return;
+
+      }
+
+      if(firstCard.dataset.value===b.dataset.value){
+
+        pairCount++;
+
+        document.getElementById("pairs")
+          .textContent=pairCount;
+
+        firstCard=null;
+
+        if(pairCount===6){
+          smallCelebrate();
+        }
+
+      }else{
+
+        lock=true;
+
+        const old=firstCard;
+
+        setTimeout(()=>{
+
+          old.textContent="♥";
+          b.textContent="♥";
+
+          old.dataset.open="no";
+          b.dataset.open="no";
+
+          firstCard=null;
+          lock=false;
+
+        },650);
+
+      }
+
+    };
+
+    box.appendChild(b);
+
+  });
+
+}
+
+memoryGame();
+
+/* CELEBRATION */
+function smallCelebrate(){
+
+  for(let i=0;i<12;i++){
+
+    setTimeout(()=>{
+
+      const h=document.createElement("div");
+
+      h.className="floating";
+      h.textContent="💚";
+      h.style.left=Math.random()*95+"%";
+      h.style.fontSize="25px";
+
+      document.body.appendChild(h);
+
+      setTimeout(()=>h.remove(),7000);
+
+    },i*100);
+
+  }
+
+}
+
+function celebrate(){
+
+  smallCelebrate();
+
+  setTimeout(()=>{
+
+    alert(
+      "Happy Birthday Thraveen 💚\n"+
+      "My love for you is forever.\n"+
+      "— Ammu"
+    );
+
+  },500);
+
+}
+
+</script>
+
+</body>
+  </html>
